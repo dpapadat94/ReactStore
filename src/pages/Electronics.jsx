@@ -5,16 +5,16 @@ import Product from "../components/Product";
 
 export async function loader() {
   const res = await fetch(
-    `https://fakestoreapi.com/products/category/men's%20clothing`
+    `https://fakestoreapi.com/products/category/electronics`
   );
   const data = await res.json();
   console.log(data);
   return data;
 }
 
-function Mens() {
-  const mensProducts = useLoaderData();
-  const [mensData, setMensData] = useState(mensProducts);
+function Electronics() {
+  const electProducts = useLoaderData();
+  const [electData, setElectData] = useState(electProducts);
 
   return (
     <div className="max-w-[1640px] mx-auto p-4">
@@ -33,10 +33,10 @@ function Mens() {
         />
       </div>
       <h1 className="text-black font-bold text-4xl my-5 text-center">
-        {mensData[0].category.toUpperCase()}
+        {electData[0].category.toUpperCase()}
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-6 pt-4">
-        {mensData.map((product, index) => (
+        {electData.map((product, index) => (
           <Product key={index} data={product} />
         ))}
       </div>
@@ -44,4 +44,4 @@ function Mens() {
   );
 }
 
-export default Mens;
+export default Electronics;

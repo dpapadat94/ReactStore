@@ -13,15 +13,17 @@ function Navbar() {
   const [nav, setNav] = useState(false);
 
   return (
-    <div className="max-w-[1640px] mx-auto flex justify-between items-center p-4">
+    <div className="max-w-[1640px] border-b-[1px] mx-auto flex justify-between items-center p-4">
       {/* Left side */}
       <div className="flex items-center">
         <div onClick={() => setNav(!nav)} className="cursor-pointer">
           <AiOutlineMenu size={30} />
         </div>
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl px-2">
-          React <span className="font-bold ">Store</span>
-        </h1>
+        <Link to="/">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl px-2">
+            React <span className="font-bold ">Store</span>
+          </h1>
+        </Link>
       </div>
 
       {/* Search Input */}
@@ -30,15 +32,27 @@ function Navbar() {
           <Link to="/mens" className="hover:cursor-pointer">
             Mens
           </Link>
-          <li className="hover:cursor-pointer">Womans</li>
-          <li className="hover:cursor-pointer">Electronics</li>
-          <li className="hover:cursor-pointer">Jewlery</li>
+          <Link to="/womans" className="hover:cursor-pointer">
+            Womans
+          </Link>
+          <Link to="/electronics" className="hover:cursor-pointer">
+            Electronics
+          </Link>
+          <Link to="/jewelery" className="hover:cursor-pointer">
+            Jewelery
+          </Link>
+          <Link to="/" className="hover:cursor-pointer">
+            Home
+          </Link>
         </ul>
       </div>
       {/* Cart button */}
-      <button className="bg-red-400 text-white hidden md:flex items-center py-2 rounded-full">
+      <Link
+        to="cart"
+        className="bg-white p-2 border border-black text-black hidden md:flex items-center py-2 rounded-full"
+      >
         <BsFillCartFill size={20} className="mr-2" /> Cart
-      </button>
+      </Link>
 
       {/* Mobile Menu */}
       {/* Overlay */}
@@ -66,26 +80,26 @@ function Navbar() {
         </h2>
         <nav>
           <ul className="flex flex-col p-4 text-gray-800">
-            <li className="text-xl py-4 flex">
+            <Link to="cart" className="text-xl py-4 flex">
               <BsFillCartFill size={25} className="mr-4" /> Cart
-            </li>
+            </Link>
             <Link to="mens" className="text-xl py-4 flex">
               <FaTshirt size={25} className="mr-4" /> Mens Clothing
             </Link>
-            <li className="text-xl py-4 flex">
+            <Link to="womans" className="text-xl py-4 flex">
               <GiLargeDress size={25} className="mr-4" /> Womans Clothing
-            </li>
+            </Link>
 
-            <li className="text-xl py-4 flex">
+            <Link to="electronics" className="text-xl py-4 flex">
               <RiComputerLine size={25} className="mr-4" />
               Electronics
-            </li>
-            <li className="text-xl py-4 flex">
-              <FiWatch size={25} className="mr-4" /> Jewlery
-            </li>
-            <li className="text-xl py-4 flex">
+            </Link>
+            <Link to="jewelery" className="text-xl py-4 flex">
+              <FiWatch size={25} className="mr-4" /> Jewelery
+            </Link>
+            <Link to="/" className="text-xl py-4 flex">
               <FaHome size={25} className="mr-4" /> Home
-            </li>
+            </Link>
           </ul>
         </nav>
       </div>

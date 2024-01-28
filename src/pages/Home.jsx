@@ -1,18 +1,31 @@
 import { useState } from "react";
 import CategoryCard from "../components/CategoryCard";
-import { useLoaderData } from "react-router-dom";
-import { FaStar } from "react-icons/fa";
+import { Link, useLoaderData } from "react-router-dom";
+import Product from "../components/Product";
 
 export async function loader() {
   const res = await fetch("https://fakestoreapi.com/products");
   const data = await res.json();
-  console.log(data);
+
   return data;
 }
 
 function Home() {
   const apiProducts = useLoaderData();
   const [productData, setProductData] = useState(apiProducts);
+
+  const typeFilter = (category) => {
+    if (category === "all") {
+      setProductData(apiProducts);
+      return;
+    } else {
+      setProductData(
+        apiProducts.filter((item) => {
+          return item.category === category;
+        })
+      );
+    }
+  };
 
   return (
     <>
@@ -44,39 +57,49 @@ function Home() {
         <h1 className="text-black font-bold text-4xl text-center">
           Shop all Products
         </h1>
+        {/* Filter Row */}
+        <div className="flex flex-col lg:flex-row justify-between">
+          {/* Fliter Type */}
+          <div>
+            <p className="font-bold text-gray-700">Filter by Type</p>
+            <div className="flex justfiy-between gap-1 lg:gap-3 flex-wrap">
+              <button
+                className="m-1 border border-black px-2 rounded-xl text-black hover:bg-gray-100 "
+                onClick={() => typeFilter("all")}
+              >
+                All
+              </button>
+              <button
+                className="m-1 border border-black px-2 rounded-xl text-black hover:bg-gray-100 "
+                onClick={() => typeFilter("men's clothing")}
+              >
+                Men
+              </button>
+              <button
+                className="m-1 border border-black px-2 rounded-xl text-black hover:bg-gray-100 "
+                onClick={() => typeFilter("women's clothing")}
+              >
+                Woman
+              </button>
+              <button
+                className="m-1 border border-black px-2 rounded-xl text-black hover:bg-gray-100 "
+                onClick={() => typeFilter("electronics")}
+              >
+                Electronics
+              </button>
+              <button
+                className="m-1 border border-black px-2 rounded-xl text-black hover:bg-gray-100 "
+                onClick={() => typeFilter("jewelery")}
+              >
+                Jewlery
+              </button>
+            </div>
+          </div>
+        </div>
         {/*product cards*/}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-6 pt-4">
-          {productData.map((item, index) => (
-            <div key={index} className="border hover:scale-105 duration-300 ">
-              <img
-                src={item.image}
-                alt={item.title}
-                className=" w-fit h-[200px] p-3 mx-auto	  rounded-t-lg"
-              />
-              <div className=" border-t-[1px] px-2 pb-0.5 py-3">
-                <p className=" text-xs text-gray-400">{item.category}</p>
-                <p className=" text-md font-bold">{item.title}</p>
-              </div>
-              <div className="flex items-center justify-start gap-2 px-2 py-2">
-                <p className="text-red-500">
-                  ${Math.round(item.price - item.price * 0.4)}
-                </p>
-                <p className=" text-gray-500 text-sm font-light line-through ">
-                  ${item.price}
-                </p>
-              </div>
-              <div className="flex px-2 pb-1  items-center mt-1 gap-1">
-                <p className=" text-black rounded-full text-sm">
-                  {item.rating.rate}
-                </p>
-                <FaStar size={13} />
-                <p className="text-gray-400  text-xs">({item.rating.count})</p>
-              </div>
-              <div className="flex justify-between px-2 py-1 ">
-                <p>view item</p>
-                <p>add to cart</p>
-              </div>
-            </div>
+          {productData.map((product, index) => (
+            <Product data={product} key={index} />
           ))}
         </div>
       </div>
