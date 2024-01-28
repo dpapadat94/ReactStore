@@ -16,7 +16,7 @@ export async function loader() {
 
 function Jewelery() {
   const jeweleryProducts = useLoaderData();
-  const [jeweleryData, setjeweleryData] = useState(jeweleryProducts);
+  const [jeweleryData] = useState(jeweleryProducts);
 
   return (
     <div className="max-w-[1640px] mx-auto p-4">

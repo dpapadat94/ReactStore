@@ -14,7 +14,7 @@ export async function loader() {
 
 function Mens() {
   const mensProducts = useLoaderData();
-  const [mensData, setMensData] = useState(mensProducts);
+  const [mensData] = useState(mensProducts);
 
   return (
     <div className="max-w-[1640px] mx-auto p-4">
