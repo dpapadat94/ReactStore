@@ -43,7 +43,7 @@ function Home() {
           </div>
           <img
             className=" w-full max-h-[500px] object-cover"
-            src="src/images/banner.jpg"
+            src="https://images.unsplash.com/photo-1696446700760-9940faf1a605?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt=""
           />
         </div>
