@@ -8,7 +8,7 @@ export async function loader() {
     `https://fakestoreapi.com/products/category/electronics`
   );
   const data = await res.json();
-  console.log(data);
+  window.scrollTo(0, 0);
   return data;
 }
 

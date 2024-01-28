@@ -7,6 +7,7 @@ import CartItem from "./CartItem";
 export async function loader() {
   const res = await fetch("https://fakestoreapi.com/products");
   const data = await res.json();
+  window.scrollTo(0, 0);
 
   return data;
 }

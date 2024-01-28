@@ -17,7 +17,7 @@ function Product({ data }) {
         <img
           src={data.image}
           alt={data.title}
-          className=" z-10 w-fit h-[200px] p-3 mx-auto rounded-t-lg "
+          className=" z-10 w-[200px] h-[200px] p-3 mx-auto rounded-t-lg "
         />
 
         <div className=" border-t-[1px] px-2 pb-0.5 py-3">

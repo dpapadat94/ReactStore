@@ -56,7 +56,7 @@ function Navbar() {
       {/* Mobile Menu */}
       {/* Overlay */}
       {nav ? (
-        <div className="bg-black/80 fixed w-full h-screen z-10 top-0 left-0"></div>
+        <div className="bg-black/50 fixed w-full h-screen z-10 top-0 left-0"></div>
       ) : (
         ""
       )}
@@ -79,24 +79,48 @@ function Navbar() {
         </h2>
         <nav>
           <ul className="flex flex-col p-4 text-gray-800">
-            <Link to="cart" className="text-xl py-4 flex">
+            <Link
+              onClick={() => setNav(!nav)}
+              to="cart"
+              className="text-xl py-4 flex"
+            >
               <BsFillCartFill size={25} className="mr-4" /> Cart
             </Link>
-            <Link to="mens" className="text-xl py-4 flex">
+            <Link
+              to="mens"
+              onClick={() => setNav(!nav)}
+              className="text-xl py-4 flex"
+            >
               <FaTshirt size={25} className="mr-4" /> Mens Clothing
             </Link>
-            <Link to="womans" className="text-xl py-4 flex">
+            <Link
+              to="womans"
+              onClick={() => setNav(!nav)}
+              className="text-xl py-4 flex"
+            >
               <GiLargeDress size={25} className="mr-4" /> Womans Clothing
             </Link>
 
-            <Link to="electronics" className="text-xl py-4 flex">
+            <Link
+              to="electronics"
+              onClick={() => setNav(!nav)}
+              className="text-xl py-4 flex"
+            >
               <RiComputerLine size={25} className="mr-4" />
               Electronics
             </Link>
-            <Link to="jewelery" className="text-xl py-4 flex">
+            <Link
+              to="jewelery"
+              onClick={() => setNav(!nav)}
+              className="text-xl py-4 flex"
+            >
               <FiWatch size={25} className="mr-4" /> Jewelery
             </Link>
-            <Link to="/" className="text-xl py-4 flex">
+            <Link
+              to="/"
+              onClick={() => setNav(!nav)}
+              className="text-xl py-4 flex"
+            >
               <FaHome size={25} className="mr-4" /> Home
             </Link>
           </ul>
