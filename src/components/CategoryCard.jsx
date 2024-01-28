@@ -1,4 +1,8 @@
 import { Link } from "react-router-dom";
+import mens from "../../assets/menspic.jpg";
+import womans from "../../assets/womanspic.jpg";
+import electronics from "../../assets/electronicspic.jpg";
+import jewelery from "../../assets/jewelerypic.jpg";
 
 function CategoryCard() {
   return (
@@ -17,7 +21,7 @@ function CategoryCard() {
         </div>
         <img
           className="max-h-[160px] md:max-h-[200px] w-full object-cover rounded-xl"
-          src="src/images/menspic.jpg"
+          src={mens}
           alt="/"
         />
       </div>
@@ -36,7 +40,7 @@ function CategoryCard() {
         </div>
         <img
           className="max-h-[160px] md:max-h-[200px] w-full object-cover rounded-xl"
-          src="src/images/womanspic.jpg"
+          src={womans}
           alt="/"
         />
       </div>
@@ -55,7 +59,7 @@ function CategoryCard() {
         </div>
         <img
           className="max-h-[160px] md:max-h-[200px] w-full object-cover rounded-xl"
-          src="src/images/electronicspic.jpg"
+          src={electronics}
           alt="/"
         />
       </div>
@@ -73,7 +77,7 @@ function CategoryCard() {
         </div>
         <img
           className="max-h-[160px] md:max-h-[200px] w-full object-cover rounded-xl"
-          src="src/images/jewelerypic.jpg"
+          src={jewelery}
           alt="/"
         />
       </div>
