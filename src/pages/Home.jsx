@@ -2,6 +2,7 @@ import { useState } from "react";
 import CategoryCard from "../components/CategoryCard";
 import { useLoaderData } from "react-router-dom";
 import Product from "../components/Product";
+import banner from "../../assets/banner.jpg";
 
 export async function loader() {
   const res = await fetch("https://fakestoreapi.com/products");
@@ -43,7 +44,7 @@ function Home() {
           </div>
           <img
             className=" w-full max-h-[500px] object-cover"
-            src="https://images.unsplash.com/photo-1696446700760-9940faf1a605?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src={banner}
             alt=""
           />
         </div>
