@@ -17,7 +17,7 @@ function CategoryCard() {
         </div>
         <img
           className="max-h-[160px] md:max-h-[200px] w-full object-cover rounded-xl"
-          src="https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          src="src/images/menspic.jpg"
           alt="/"
         />
       </div>
@@ -36,7 +36,7 @@ function CategoryCard() {
         </div>
         <img
           className="max-h-[160px] md:max-h-[200px] w-full object-cover rounded-xl"
-          src="https://images.pexels.com/photos/3775120/pexels-photo-3775120.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          src="src/images/womanspic.jpg"
           alt="/"
         />
       </div>
@@ -55,7 +55,7 @@ function CategoryCard() {
         </div>
         <img
           className="max-h-[160px] md:max-h-[200px] w-full object-cover rounded-xl"
-          src="https://images.pexels.com/photos/414548/pexels-photo-414548.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          src="src/images/electronicspic.jpg"
           alt="/"
         />
       </div>
@@ -73,7 +73,7 @@ function CategoryCard() {
         </div>
         <img
           className="max-h-[160px] md:max-h-[200px] w-full object-cover rounded-xl"
-          src="https://images.pexels.com/photos/1191531/pexels-photo-1191531.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          src="src/images/jewelerypic.jpg"
           alt="/"
         />
       </div>

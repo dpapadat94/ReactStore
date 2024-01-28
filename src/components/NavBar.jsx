@@ -1,7 +1,6 @@
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { BsFillCartFill } from "react-icons/bs";
 import { FiWatch } from "react-icons/fi";
-
 import { GiLargeDress } from "react-icons/gi";
 import { FaHome, FaTshirt } from "react-icons/fa";
 import { RiComputerLine } from "react-icons/ri";
@@ -20,8 +19,8 @@ function Navbar() {
           <AiOutlineMenu size={30} />
         </div>
         <Link to="/">
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl px-2">
-            React <span className="font-bold ">Store</span>
+          <h1 className="text-2xl font-bold sm:text-3xl lg:text-4xl px-2">
+            React <span className=" font-thin">Store</span>
           </h1>
         </Link>
       </div>
@@ -49,7 +48,7 @@ function Navbar() {
       {/* Cart button */}
       <Link
         to="cart"
-        className="bg-white p-2 border border-black text-black hidden md:flex items-center py-2 rounded-full"
+        className="bg-white p-3 border border-slate-300 text-black hidden md:flex items-center py-2 rounded-full hover:border-black"
       >
         <BsFillCartFill size={20} className="mr-2" /> Cart
       </Link>
@@ -75,8 +74,8 @@ function Navbar() {
           size={30}
           className="absolute right-4 top-4 cursor-pointer"
         />
-        <h2 className="text-2xl p-4">
-          React <span className="font-bold">Store</span>
+        <h2 className="text-2xl font-bold p-4">
+          React <span className="font-thin">Store</span>
         </h2>
         <nav>
           <ul className="flex flex-col p-4 text-gray-800">

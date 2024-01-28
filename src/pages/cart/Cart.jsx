@@ -1,7 +1,9 @@
 import { useContext } from "react";
-import CartItem from "./CartItem";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { ShopContext } from "../../context/shop-context";
+
+import CartItem from "./CartItem";
+
 export async function loader() {
   const res = await fetch("https://fakestoreapi.com/products");
   const data = await res.json();
@@ -62,7 +64,7 @@ function Cart() {
               }}
             >
               {" "}
-              Checkout{" "}
+              Place Order{" "}
             </button>
           </div>
         </div>

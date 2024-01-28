@@ -14,7 +14,7 @@ export async function loader() {
 
 function Electronics() {
   const electProducts = useLoaderData();
-  const [electData, setElectData] = useState(electProducts);
+  const [electData] = useState(electProducts);
 
   return (
     <div className="max-w-[1640px] mx-auto p-4">

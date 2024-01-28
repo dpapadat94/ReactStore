@@ -1,6 +1,6 @@
-import { FaStar, FaRegTrashAlt } from "react-icons/fa";
-
+import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
+
 import { ShopContext } from "../context/shop-context";
 import { useContext } from "react";
 
@@ -11,11 +11,15 @@ function Product({ data }) {
   return (
     <div className="border hover:scale-105 shadow-lg  duration-300 ">
       <Link to={`/individual/${data.id}`}>
+        <p className="text-black font-thin text-sm p-3">
+          Click for product detail
+        </p>
         <img
           src={data.image}
           alt={data.title}
-          className=" w-fit h-[200px] p-3 mx-auto	  rounded-t-lg"
+          className=" z-10 w-fit h-[200px] p-3 mx-auto rounded-t-lg "
         />
+
         <div className=" border-t-[1px] px-2 pb-0.5 py-3">
           <p className=" text-xs text-gray-400">{data.category}</p>
           <p className=" text-md font-bold">{data.title}</p>
