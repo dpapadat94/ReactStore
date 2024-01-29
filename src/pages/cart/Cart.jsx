@@ -23,7 +23,8 @@ function Cart() {
         let itemInfo = cartProducts.find(
           (product) => product.id === Number(item)
         );
-        totalAmount += cartItems[item] * itemInfo.price;
+        totalAmount +=
+          cartItems[item] * (itemInfo.price - itemInfo.price * 0.4);
       }
     }
     return totalAmount;
